@@ -3,7 +3,6 @@
  * created_at  Tue, 2024-01-02 21:12:46
  **/           
 #include <bits/stdc++.h>
-#include <cctype>
 using namespace std;
 
 #ifdef LOCAL
