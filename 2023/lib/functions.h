@@ -1,3 +1,4 @@
+#include <sstream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -52,4 +53,17 @@ string str_trim_right(const string &str) {
 
 string str_trim(const string &str) {
     return str_trim_left(str_trim_right(str));
+}
+
+template<typename InputIterator>
+string join(InputIterator begin, InputIterator end, string delimiter = ",") {
+    if (begin == end) {
+        return string{};
+    }
+    ostringstream oss{};
+    oss << *begin++;
+    for (; begin != end; ++begin) {
+        oss << delimiter << *begin;
+    }
+    return oss.str();
 }

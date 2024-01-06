@@ -18,11 +18,6 @@ const int MOD = (int) 1e9 + 7;
 const int INF = 0x3f3f3f3f;
 const long long INF_LL = 0x3f3f3f3f3f3f3f3f;
 
-pair<string, string> exact_str_map(const string &s) {
-    vector<string> ss = str_split(s, "-");
-    assert((int) ss.size() == 3);
-    return make_pair(ss[1], ss[0]);
-}
 
 int main() {
     cin.tie(nullptr)->sync_with_stdio(false);
@@ -34,7 +29,6 @@ int main() {
     getline(cin, bar);
     while (getline(cin, bar)) {
         bar = str_split(bar)[0];
-        auto[from, to] = exact_str_map(bar);
         string nums_str;
         map<long long, long long> new_seeds;
         while (getline(cin, nums_str)) {
